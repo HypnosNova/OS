@@ -1,0 +1,40 @@
+
+.wrapper-container{margin-top:20px;}	/* Not delete */
+.wrapper-container .container{width:100%;text-align:center;}
+
+/* Container */
+
+.wrapper-slider {
+	z-index: 9999999;
+	position: fixed;
+}
+.wrapper-slider .label {
+	z-index: 2;
+	position: absolute;
+	bottom: 0px;
+	height: 20px;
+	width: 20%;
+	left: 40%;
+	background-color: rgba(0,0,0,0.4);
+	user-select:none;
+	border-radius: 0 0 10px 10px;
+}
+.wrapper-slider .label.mousedown {
+	cursor: s-resize;
+}
+
+.wrapper-slider .label.mousedown .one {
+	background-color: #3E4A50;
+}
+.wrapper-slider .container {
+	overflow: auto;
+	color: #FFF;
+	position: absolute;
+	top: 0;
+	height: 780px;
+	width: 100%;
+	background: url("../img/liner.png");
+}
+.wrapper-slider .container .content {
+	padding: 10px 0;
+}

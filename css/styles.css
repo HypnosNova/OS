@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+/*-------------------------
+	General Styles
+--------------------------*/
+
+html {
+	background-color: #161616;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	outline: none;
+	color: #54a6de;
+}
+a:hover {
+	text-decoration: underline;
+}
+/*----------------------------
+	The Home Screen
+-----------------------------*/
+
+#homeScreen {
+	width: 100%;
+	height: 100%;
+}
+/* The mask shows only one screen at the time. Uses oveflow:hidden */
+
+#mask {
+	width: 800px;
+	height: 540px;
+	position: absolute;
+	left: 50%;
+	margin-left: -400px!important;
+	top:50%;
+	margin-top: -250px!important;
+	overflow: hidden;
+	margin: 0px auto 0;
+	background-color: rgba(0,0,0,0.5);
+}
+#allScreens {
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	cursor: move;
+}
+.screen {
+	width: 800px;
+	float: left;
+}
+#dock .dockicon,
+.screen .icon {
+	float: left;
+	width: 80px;
+	height: 80px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 40px;
+	position: relative;
+	opacity: 0.8;
+}
+/* Displaying the title attribute below the icon: */
+
+.screen .icon:after {
+	bottom: -25px;
+	color: white;
+	content: attr(title);
+	font-size: 12px;
+	height: 20px;
+	left: -10px;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	white-space: nowrap;
+	width: 100px;
+	text-shadow: 0 0 3px #222;
+}
+.screen .icon:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+#dock {
+	height: 70px;
+	margin: 60px auto;
+	width: 332px;
+}
+/* The dock icons get subtle shadows below them */
+
+#dock .dockicon:after {
+	border-radius: 50px/10px;
+	bottom: 7px;
+	box-shadow: 0 5px 2px #000000;
+	content: "";
+	height: 1px;
+	position: absolute;
+	width: 58px;
+}
+#indicators {
+	width:20%;
+	left: 40%;
+	text-align: center;
+	position: absolute;
+	list-style: none;
+	top:50%;
+	margin-top: 240px!important;
+}
+#indicators li {
+	border-radius: 50%;
+	display: inline-block;
+	margin: 7px;
+	width: 6px;
+	height: 6px;
+	background-color: white;
+	opacity: 0.6;
+}
+#indicators li.active {
+	opacity: 1;
+	background-color: #00A2D6;
+	box-shadow: 0 0 3px #00A2D6, 0 0 1px #51CFF9 inset;
+}
+/*noise 沙盒*/
+
+button,
+select,
+a,
+a:visited {
+	padding: 8px 12px 8px 12px;
+	border: none;
+	border-radius: 5px;
+	margin-right: 5px;
+	color: #ffffff;
+	background-color: #000000;
+	opacity: 0.5;
+	font-family: Monospace;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+button:hover,
+select:hover,
+a:hover {
+	opacity: 1;
+	box-shadow: 0 0 4px #FFF;
+}
+option {
+	color: #ffffff;
+	background-color: #000000;
+}
