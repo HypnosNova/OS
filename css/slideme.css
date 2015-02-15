@@ -5,7 +5,8 @@
 /* Container */
 
 .wrapper-slider {
-	z-index: 9999999;
+	width: 800px;
+	z-index: 1;
 	position: fixed;
 }
 .wrapper-slider .label {

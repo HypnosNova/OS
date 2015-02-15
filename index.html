@@ -3,13 +3,14 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="description" content="A three dimensional and space efficient menu created with JavaScript and CSS 3.">
+		<link rel="stylesheet" type="text/css" href="module/window/css/drag.css"/>
 		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/demo.css">
 		<link rel="stylesheet" href="css/codemirror.css">
 		<link rel="stylesheet" href="css/default.css">
 		<link rel="stylesheet" type="text/css" href="css/scorllbar.css"/>
 		<link href="css/slideme.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="module/time/css/style.css"/>
 		<script src="js/jquery.js"></script>
 		<script src="js/helpers.js"></script>
 		<script src="js/codemirror.js"></script>
@@ -104,27 +105,22 @@ void main( void ) {
 			<ul>
 				<li id="showcode">
 				</li>
-				<li><a href="http://lab.hakim.se/radar/">Radar</a>
-				</li>
-				<li><a href="http://lab.hakim.se/forkit-js/">forkit.js</a>
-				</li>
-				<li><a href="http://lab.hakim.se/scroll-effects/">stroll.js</a>
-				</li>
-				<li><a href="http://lab.hakim.se/zoom-js">zoom.js</a>
-				</li>
-				<li><a href="http://lab.hakim.se/reveal-js">reveal.js</a>
-				</li>
-				<li><a href="http://itunes.apple.com/us/app/sinuous/id543097218">Sinuous for iOS</a>
-				</li>
-				<li><a href="http://hakim.se/experiments/css/domtree/">DOM Tree</a>
-				</li>
-				<li><a href="http://hakim.se/experiments/css/holobox/">Holobox</a>
-				</li>
-				<li><a href="http://hakim.se/experiments/html5/404/netmag.html">404</a>
-				</li>
+				
 			</ul>
+			<div id="clock" class="dark">
+				<div class="display">
+					<div class="weekdays">
+					</div>
+					<div class="ampm">
+					</div>
+					<div class="digits">
+					</div>
+					<div class="date" style="margin-top: 10px;font-family: dig;font-weight: bold;">
+						2015-02-15
+					</div>
+				</div>
+			</div>
 		</div>
-
 		<div class="meny-arrow"></div>
 
 		<div class="contents" id="codeContainer">
@@ -134,5 +130,36 @@ void main( void ) {
 	<script src="js/meny.js"></script>
 	<script src="js/touchable.js"></script>
 	<script src="js/later.js"></script>
-	<script src="js/background.js" charset="utf-8"></script>
+	<script src="js/background.js"></script>
+	<script src="module/window/js/drag.js"></script>
+	<script src="js/appInfo.js"></script>
+	<script src="module/time/js/moment.min.js"></script>
+	<script src="module/time/js/script.js"></script>
+	<script>
+		$(function() {
+			$("#3D_Ball_Maze").unbind("click").bind("click", ballmaze);
+			setInterval('setIframeHeight()',1);//动态调节
+		});
+		var flag = true;
+		function changeFlage(){
+			flag=true;
+		}
+		function ballmaze(event) {
+			if (flag) {
+				flag=false;
+				createWindows(ballMaze);
+				setTimeout(changeFlage,50);
+			}
+		}
+		
+		function setIframeHeight(){
+			var array=document.getElementsByName("appframe")
+			for(var i=0;i<array.length;i++){
+				//alert($(array[i].parentNode).attr("id"))
+				$(array[i].parentNode).css("width",(array[i].parentNode.parentNode.offsetWidth-12)+"px");
+				$(array[i].parentNode).css("height",(array[i].parentNode.parentNode.offsetHeight-40)+"px");
+				array[i].height=array[i].parentNode.offsetHeight;
+			}
+		}
+	</script>
 </html>

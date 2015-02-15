@@ -53,12 +53,12 @@ var Meny = {
 				width: 300,
 				height: 300,
 				position: POSITION_L,
-				threshold: 40,
-				angle: 30,
+				threshold: 10,
+				angle: 45,
 				overlap: 6,
 				transitionDuration: '0.5s',
 				transitionEasing: 'ease',
-				gradient: 'rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.65) 100%)',
+				gradient: 'rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.60) 100%)',
 				mouse: true,
 				touch: true
 			};

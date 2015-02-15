@@ -41,7 +41,7 @@ if (Meny.getQuery().u && Meny.getQuery().u.match(/^http/gi)) {
 	contents.innerHTML = '<div class="cover"></div><iframe src="' + Meny.getQuery().u + '" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
 }
 
-var DockIcon, Icon, Screen, Stage,
+var Icon, Screen, Stage,
 	__hasProp = {}.hasOwnProperty,
 	__extends = function(child, parent) {
 		for (var key in parent) {
@@ -61,24 +61,12 @@ Icon = (function() {
 	function Icon(id, title) {
 		this.id = id;
 		this.title = title;
-		this.markup = "<div class='icon' style='background-image:url(img/icons/" + this.id + ".png)' title='" + this.title + "'></div>";
+		this.markup = "<div class='icon' style='background-image:url(img/icons/" + this.id + ".png)' title='" + this.title + "' id='"+this.title+"'></div>";
 	}
 
 	return Icon;
 
 })();
-
-DockIcon = (function(_super) {
-	__extends(DockIcon, _super);
-
-	function DockIcon(id, title) {
-		DockIcon.__super__.constructor.call(this, id, title);
-		this.markup = this.markup.replace("class='icon'", "class='dockicon'");
-	}
-
-	return DockIcon;
-
-})(Icon);
 
 Screen = (function() {
 	function Screen(icons) {
@@ -200,9 +188,8 @@ Stage = (function() {
 })();
 
 $(function() {
-	var allIcons, allScreens, dock, dockIcons, icon, stage, _i, _len, _results;
-	allIcons = [new Icon('Photos', 'Photo Gallery'), new Icon('Maps', 'Google Maps'), new Icon('Chuzzle', 'Chuzzle'), new Icon('Safari', 'Safari'), new Icon('Weather', 'Weather'), new Icon('nes', 'NES Emulator'), new Icon('Calendar', 'Calendar'), new Icon('Clock', 'Clock'), new Icon('BossPrefs', 'Boss Prefs'), new Icon('Chess', 'Chess'), new Icon('Mail', 'Mail'), new Icon('Phone', 'Phone'), new Icon('SMS', 'SMS Center'), new Icon('Camera', 'Camera'), new Icon('iPod', 'iPod'), new Icon('Calculator', 'Calculator'), new Icon('Music', 'Music'), new Icon('Poof', 'Poof'), new Icon('Settings', 'Settings'), new Icon('YouTube', 'Youtube'), new Icon('psx4all', 'PSx4All'), new Icon('VideoRecorder', 'Record Video'), new Icon('Installer', 'Installer'), new Icon('Notes', 'Notes'), new Icon('RagingThunder', 'RagingThunder'), new Icon('Stocks', 'Stocks'), new Icon('genesis4iphone', 'Genesis'), new Icon('snes4iphone', 'SNES Emulator'), new Icon('Calendar', 'Calendar'), new Icon('Clock', 'Clock'), new Icon('Photos', 'Photo Gallery'), new Icon('Maps', 'Google Maps'), new Icon('Photos', 'Photo Gallery'), new Icon('Maps', 'Google Maps'), new Icon('Chuzzle', 'Chuzzle'), new Icon('Safari', 'Safari'), new Icon('Weather', 'Weather'), new Icon('nes', 'NES Emulator'), new Icon('Calendar', 'Calendar'), new Icon('Clock', 'Clock'), new Icon('BossPrefs', 'Boss Prefs'), new Icon('Chess', 'Chess'), new Icon('Mail', 'Mail'), new Icon('Phone', 'Phone'), new Icon('SMS', 'SMS Center'), new Icon('Camera', 'Camera'), new Icon('iPod', 'iPod'), new Icon('Calculator', 'Calculator'), new Icon('Music', 'Music'), new Icon('Poof', 'Poof'), new Icon('Settings', 'Settings'), new Icon('YouTube', 'Youtube'), new Icon('psx4all', 'PSx4All'), new Icon('VideoRecorder', 'Record Video'), new Icon('Installer', 'Installer'), new Icon('Notes', 'Notes'), new Icon('RagingThunder', 'RagingThunder'), new Icon('Stocks', 'Stocks'), new Icon('genesis4iphone', 'Genesis'), new Icon('snes4iphone', 'SNES Emulator'), new Icon('Calendar', 'Calendar'), new Icon('Clock', 'Clock'), new Icon('Photos', 'Photo Gallery'), new Icon('Maps', 'Google Maps')];
-	dockIcons = [new DockIcon('Camera', 'Camera'), new DockIcon('iPod', 'iPod'), new DockIcon('Calculator', 'Calculator')];
+	var allIcons, allScreens, icon, stage, _i, _len, _results;
+	allIcons = [new Icon('BallMaze', '3D_Ball_Maze')];
 	allScreens = $('#allScreens');
 	allScreens.Touchable();
 	stage = new Stage(allIcons);
@@ -216,11 +203,6 @@ $(function() {
 			return stage.previous();
 		}
 	});
-	dock = $('#dock');
 	_results = [];
-	for (_i = 0, _len = dockIcons.length; _i < _len; _i++) {
-		icon = dockIcons[_i];
-		_results.push(dock.append(icon.markup));
-	}
 	return _results;
 });

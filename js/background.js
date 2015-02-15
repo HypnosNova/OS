@@ -95,9 +95,9 @@ function init() {
 	button.addEventListener('click', function(event) {
 
 		if (isCodeVisible()) {
-
 			button.textContent = 'show code';
 			code.getWrapperElement().style.display = 'none';
+			
 			compileButton.style.visibility = 'hidden';
 			set_save_button('hidden');
 			set_parent_button('hidden');
@@ -192,7 +192,7 @@ function init() {
 			}
 		}
 	});
-	code.getWrapperElement().style.display = 'none';
+	code.getWrapperElement().style.display = '';
 
 	resizer.offsetMouseX = 0;
 	resizer.offsetMouseY = 0;
@@ -321,9 +321,8 @@ function init() {
 	onWindowResize();
 	window.addEventListener('resize', onWindowResize, false);
 	load_url_code();
-
 	compileScreenProgram();
-
+	code.getWrapperElement().style.display = 'none';
 }
 
 function isCodeVisible() {

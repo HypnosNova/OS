@@ -24,7 +24,9 @@ a:hover {
 -----------------------------*/
 
 #homeScreen {
-	width: 100%;
+	width: 800px;
+	left: 50%;
+	margin-left: -400px;
 	height: 100%;
 }
 /* The mask shows only one screen at the time. Uses oveflow:hidden */
