@@ -1,0 +1,27 @@
+.item_content ul {
+	list-style: none;
+}
+.item_content ul li {
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 5px 0 5px 0;
+}
+.item_content {
+	margin-left: 10px;
+	height: 400px;
+	width: 200px;
+	margin: 0 auto;
+}
+.item_content .item {
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+.item_content .item img {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+}

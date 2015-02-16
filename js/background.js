@@ -30,7 +30,7 @@ if (!Date.now) {
 
 // Greetings to Iq/RGBA! ;)
 
-var quality = 2,
+var quality = 4,
 	quality_levels = [0.5, 1, 2, 4, 8];
 var toolbar, compileButton, compileTimer, errorLines = [];
 var code, canvas, gl, buffer, currentProgram, vertexPosition, screenVertexPosition, panButton,

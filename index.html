@@ -11,11 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="css/scorllbar.css"/>
 		<link href="css/slideme.css" type="text/css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="module/time/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="module/sideMenu/css/style.css"/>
 		<script src="js/jquery.js"></script>
 		<script src="js/helpers.js"></script>
 		<script src="js/codemirror.js"></script>
 		<script src="js/glsl.js"></script>
 		<script src="js/slideme.min.js"></script>
+		<script src="js/html2canvas.min.js"></script>
 	</head>
 
 	<body scroll="no">
@@ -98,15 +100,26 @@ void main( void ) {
 		</script>
 		<div class="wrapper-slider">
 		</div>
-		<div id="osMain"></div>
+		<div id="osMain">
+		</div>
 		<div class="meny" >
 			
 			<h2>设置</h2>
 			<ul>
-				<li id="showcode">
-				</li>
-				
+				<li id="showcode"></li>
 			</ul>
+				<!--最小话窗口图标存放的位置-->
+				<div class="item_content">
+					<ul id="sideBarContainer">
+						<!--<li>
+							<div class="item">
+								<img src="images/youku.png" />	
+							</div>
+						</li>-->
+						
+					</ul>
+				</div>
+			
 			<div id="clock" class="dark">
 				<div class="display">
 					<div class="weekdays">
@@ -127,14 +140,18 @@ void main( void ) {
 			
 		</div>
 	</body>
+	<script src="js/Modernizr.js"></script>
+	<script src="module/explore/js/explore.js"></script>
 	<script src="js/meny.js"></script>
 	<script src="js/touchable.js"></script>
 	<script src="js/later.js"></script>
+	<script src="module/sideMenu/js/dragmove.js"></script>
 	<script src="js/background.js"></script>
 	<script src="module/window/js/drag.js"></script>
 	<script src="js/appInfo.js"></script>
 	<script src="module/time/js/moment.min.js"></script>
 	<script src="module/time/js/script.js"></script>
+	
 	<script>
 		$(function() {
 			$("#3D_Ball_Maze").unbind("click").bind("click", ballmaze);
@@ -162,5 +179,6 @@ void main( void ) {
 				array[i].height=array[i].parentNode.offsetHeight;
 			}
 		}
+		
 	</script>
 </html>

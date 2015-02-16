@@ -345,7 +345,9 @@ var Meny = {
 			function open() {
 				if( !isOpen ) {
 					isOpen = true;
-
+					
+					$(".wrapper-slider").autoUp();
+					
 					Meny.addClass( dom.wrapper, 'meny-active' );
 
 					dom.cover.style.height = dom.contents.scrollHeight + 'px';
@@ -383,7 +385,7 @@ var Meny = {
 			function close() {
 				if( isOpen ) {
 					isOpen = false;
-
+					$(".wrapper-slider").autoDown();
 					Meny.removeClass( dom.wrapper, 'meny-active' );
 
 					// Use transforms and transitions if available...
