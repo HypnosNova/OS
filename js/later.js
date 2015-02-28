@@ -189,7 +189,7 @@ Stage = (function() {
 
 $(function() {
 	var allIcons, allScreens, icon, stage, _i, _len, _results;
-	allIcons = [new Icon('BallMaze', '3D_Ball_Maze'),new Icon('PDFReader', 'PDF_Reader'),new Icon('map3D', '3D_Map')];
+	allIcons = [new Icon('BallMaze', '3D_Ball_Maze'),new Icon('spider', 'Spider_Solitaire'),new Icon('PDFReader', 'PDF_Reader'),new Icon('map3D', '3D_Map')];
 	allScreens = $('#allScreens');
 	allScreens.Touchable();
 	stage = new Stage(allIcons);

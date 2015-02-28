@@ -12,7 +12,7 @@ if (!window.requestAnimationFrame) {
 			window.msRequestAnimationFrame ||
 			function(callback, element) {
 
-				window.setTimeout(callback, 1000 / 50);
+				window.setTimeout(callback, 10000);
 
 			};
 

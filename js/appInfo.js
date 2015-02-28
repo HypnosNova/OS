@@ -13,3 +13,9 @@ var map3D={
 	appUrl:"http://hypnosnova.github.io/tangram",
 	appIcon:"map3D.png",
 }
+
+var spiderCard={
+	appTitle:"蜘蛛纸牌",
+	appUrl:"http://hypnosnova.github.io/fSpider",
+	appIcon:"spider.png",
+}

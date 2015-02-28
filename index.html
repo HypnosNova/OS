@@ -157,6 +157,7 @@ void main( void ) {
 			$("#3D_Ball_Maze").unbind("click").bind("click", ballmaze);
 			$("#PDF_Reader").unbind("click").bind("click", pdfreader);
 			$("#3D_Map").unbind("click").bind("click", map3d);
+			$("#Spider_Solitaire").unbind("click").bind("click", spider);
 			setInterval('setIframeHeight()',10);//动态调节
 			setInterval('var now=new Date();$(".date").html(now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate())',1000);
 		});
@@ -182,6 +183,14 @@ void main( void ) {
 			if (flag) {
 				flag=false;
 				createWindows(pdfReader);
+				setTimeout(changeFlage,50);
+			}
+		}
+		
+		function spider(event) {
+			if (flag) {
+				flag=false;
+				createWindows(spiderCard);
 				setTimeout(changeFlage,50);
 			}
 		}
