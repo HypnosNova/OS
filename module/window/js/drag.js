@@ -88,7 +88,7 @@ function drag(oDrag, handle) {
 			$(tmpdiv).addClass("item");
 			$(tmpdiv).append('<img src="img/icons/' + $(oDrag).attr("appIcon") + '"/>');
 			oA.appendChild(tmpdiv);
-			oA.title = "还原";
+			oA.title = $(oDrag).attr("appTitle");
 			document.getElementById("sideBarContainer").appendChild(oA);
 			oA.onclick = function() {
 					$(oDrag).fadeIn(300);
@@ -195,7 +195,8 @@ function createWindows(app) {
 	oDrag.setAttribute("id", "drag");
 	oDrag.setAttribute("name", "drag");
 	oDrag.setAttribute("appIcon", app.appIcon);
-	$(oDrag).append('<div class="title"><h2>' + app.appTitle + '</h2><div><a class="min" href="javascript:;" title="最小化"></a><a class="max" href="javascript:;" title="最大化"></a><a class="revert" href="javascript:;" title="还原"></a><a class="close" href="javascript:;" title="关闭"></a></div>')
+	$(oDrag).attr("appTitle",app.appTitle);
+	$(oDrag).append('<div class="title"><img style="width:'+22+'px;float:left" src="img/icons/'+app.appIcon+'"/><h2>&nbsp' + app.appTitle + '</h2><div><a class="min" href="javascript:;" title="最小化"></a><a class="max" href="javascript:;" title="最大化"></a><a class="revert" href="javascript:;" title="还原"></a><a class="close" href="javascript:;" title="关闭"></a></div>')
 		.append('<div class="resizeL"></div>')
 		.append('<div class="resizeT"></div>')
 		.append('<div class="resizeR"></div>')

@@ -76,8 +76,8 @@ function explore(div,imgu) {
 	if (!ready) return;
 	ready = false;
 
-	var R = 4;
-	var C = 7;
+	var R = 3;
+	var C = 5;
 	var cw = W / 2;
 	var ch = H / 2;
 

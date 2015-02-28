@@ -155,6 +155,8 @@ void main( void ) {
 	<script>
 		$(function() {
 			$("#3D_Ball_Maze").unbind("click").bind("click", ballmaze);
+			$("#PDF_Reader").unbind("click").bind("click", pdfreader);
+			$("#3D_Map").unbind("click").bind("click", map3d);
 			setInterval('setIframeHeight()',10);//动态调节
 			setInterval('var now=new Date();$(".date").html(now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate())',1000);
 		});
@@ -169,7 +171,20 @@ void main( void ) {
 				setTimeout(changeFlage,50);
 			}
 		}
-		
+		function map3d(event) {
+			if (flag) {
+				flag=false;
+				createWindows(map3D);
+				setTimeout(changeFlage,50);
+			}
+		}
+		function pdfreader(event) {
+			if (flag) {
+				flag=false;
+				createWindows(pdfReader);
+				setTimeout(changeFlage,50);
+			}
+		}
 		function setIframeHeight(){
 			var array=document.getElementsByName("appframe")
 			for(var i=0;i<array.length;i++){

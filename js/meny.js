@@ -54,7 +54,7 @@ var Meny = {
 				height: 300,
 				position: POSITION_L,
 				threshold: 10,
-				angle: 45,
+				angle: 0,
 				overlap: 6,
 				transitionDuration: '0.5s',
 				transitionEasing: 'ease',
